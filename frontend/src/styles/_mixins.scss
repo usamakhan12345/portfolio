@@ -1,0 +1,97 @@
+@import './variables';
+
+// Glassmorphism Card
+@mixin glass-card($blur: 16px, $bg-opacity: 0.4, $border-opacity: 0.08) {
+  background: rgba($bg-secondary, $bg-opacity);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid rgba(255, 255, 255, $border-opacity);
+  box-shadow: $glass-shadow;
+  border-radius: 16px;
+}
+
+// Neon Glow Border on Hover
+@mixin hover-glow($glow-color: $color-primary) {
+  position: relative;
+  transition: $transition-normal;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, $color-primary, $color-secondary);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: $transition-normal;
+  }
+
+  &:hover {
+    box-shadow: 0 0 25px rgba($glow-color, 0.2);
+    transform: translateY(-5px);
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+// Media Query Helpers
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: #{$laptop}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$desktop}) {
+    @content;
+  }
+}
+
+// Custom Scrollbar
+@mixin custom-scrollbar($width: 8px) {
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $width;
+  }
+  &::-webkit-scrollbar-track {
+    background: $bg-primary;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: lighten($bg-tertiary, 5%);
+    border-radius: 4px;
+    border: 2px solid $bg-primary;
+    &:hover {
+      background: $color-primary;
+    }
+  }
+}
+
+// Flex Center Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

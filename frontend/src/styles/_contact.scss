@@ -1,0 +1,199 @@
+@import './variables';
+@import './mixins';
+
+.contact-section {
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 4rem;
+    align-items: start;
+
+    @include laptop {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  // Contact Info Cards
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .info-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .info-desc {
+      color: $text-secondary;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid $border-color;
+      padding: 1.25rem;
+      border-radius: 12px;
+      transition: $transition-normal;
+
+      &:hover {
+        border-color: rgba($color-secondary, 0.3);
+        background: rgba(255, 255, 255, 0.04);
+        transform: translateX(5px);
+      }
+
+      .info-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+        background: rgba($color-secondary, 0.1);
+        color: $color-secondary;
+        @include flex-center;
+        font-size: 1.35rem;
+        flex-shrink: 0;
+      }
+
+      .info-text {
+        span {
+          display: block;
+          &.label { font-size: 0.8rem; color: $text-muted; margin-bottom: 0.15rem; }
+          &.val { font-size: 0.95rem; font-weight: 600; color: $text-primary; }
+        }
+      }
+    }
+
+    // Social Links
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+
+      .social-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid $border-color;
+        color: $text-secondary;
+        @include flex-center;
+        font-size: 1.2rem;
+        transition: $transition-normal;
+
+        &:hover {
+          background: $gradient-hero;
+          color: #fff;
+          border-color: transparent;
+          transform: translateY(-3px) rotate(360deg);
+          box-shadow: 0 5px 15px rgba($color-primary, 0.4);
+        }
+      }
+    }
+  }
+
+  // Contact Form
+  .contact-form-wrapper {
+    @include glass-card(16px, 0.3, 0.06);
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    @include tablet {
+      padding: 1.5rem;
+    }
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .form-group-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+
+      @include mobile {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: $text-secondary;
+        letter-spacing: 0.5px;
+      }
+
+      input, textarea {
+        background: rgba($bg-primary, 0.6);
+        border: 1px solid $border-color;
+        color: $text-primary;
+        padding: 0.85rem 1.25rem;
+        border-radius: 8px;
+        font-family: $font-sans;
+        font-size: 0.95rem;
+        transition: $transition-normal;
+
+        &:focus {
+          border-color: $color-primary;
+          box-shadow: 0 0 10px rgba($color-primary, 0.15);
+          outline: none;
+        }
+
+        &::placeholder {
+          color: $text-muted;
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 150px;
+      }
+    }
+
+    .submit-btn {
+      width: 100%;
+      justify-content: center;
+      padding: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .form-status {
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-align: center;
+
+      &.success {
+        background: rgba($color-secondary, 0.15);
+        color: lighten($color-secondary, 10%);
+        border: 1px solid rgba($color-secondary, 0.3);
+      }
+
+      &.error {
+        background: rgba(239, 68, 68, 0.15);
+        color: #f87171;
+        border: 1px solid rgba(239, 68, 68, 0.3);
+      }
+    }
+  }
+}

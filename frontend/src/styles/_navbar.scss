@@ -1,0 +1,173 @@
+@import './variables';
+@import './mixins';
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 1000;
+  transition: $transition-normal;
+  display: flex;
+  align-items: center;
+
+  &.scrolled {
+    height: 70px;
+    background: rgba($bg-primary, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid $border-color;
+    box-shadow: $shadow-md;
+  }
+
+  .nav-container {
+    @include flex-between;
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, $color-primary, $color-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $color-secondary;
+      box-shadow: 0 0 10px $color-secondary;
+    }
+  }
+
+  // Desktop Navigation menu
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 2.5rem;
+
+    @include tablet {
+      display: none; // Hide on mobile
+    }
+  }
+
+  .nav-item {
+    position: relative;
+
+    .nav-link {
+      color: $text-secondary;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.5rem 0;
+
+      &:hover {
+        color: $text-primary;
+      }
+
+      &.active {
+        color: $color-secondary;
+        font-weight: 600;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          border-radius: 9999px;
+          background: linear-gradient(90deg, $color-primary, $color-secondary);
+          box-shadow: 0 0 8px rgba($color-secondary, 0.5);
+        }
+      }
+    }
+  }
+
+  .nav-cta {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  // Mobile menu button
+  .mobile-menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    color: $text-primary;
+    z-index: 1001;
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  // Mobile menu drawer
+  .mobile-drawer {
+    display: none;
+
+    @include tablet {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 75%;
+      height: 100vh;
+      background: rgba($bg-secondary, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 999;
+      padding: 6rem 2rem 2rem;
+      transition: $transition-slow;
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+      border-left: 1px solid $border-color;
+
+      &.active {
+        right: 0;
+      }
+
+      .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        list-style: none;
+
+        .mobile-link {
+          font-size: 1.25rem;
+          color: $text-secondary;
+          display: block;
+          padding: 0.5rem 0;
+
+          &.active {
+            color: $color-secondary;
+            font-weight: 600;
+            border-left: 3px solid $color-secondary;
+            padding-left: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  // Overlay for mobile drawer
+  .mobile-overlay {
+    display: none;
+
+    @include tablet {
+      &.active {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+        z-index: 998;
+      }
+    }
+  }
+}
