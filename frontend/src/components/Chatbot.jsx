@@ -14,8 +14,8 @@ const Chatbot = () => {
   const sessionId = 'usama-portfolio-session';
   const messagesEndRef = useRef(null);
 
-  // Backend API Base URL
-  const API_BASE_URL = 'http://localhost:5000/api/chat';
+  // Backend API Base URL (Configurable in production)
+  const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/chat';
 
   // Fetch chat history from database on load
   useEffect(() => {
