@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 
 const Resume = () => {
   const resumeHighlights = [
-    'Proficient in building React.js interfaces & Single Page Applications (SPA)',
-    'Experienced in scalable REST APIs using Node.js & Express.js server layers',
-    'Database modeling with MongoDB schemas and Mongoose validation scripts',
-    'Styling design systems with Sass/SCSS pre-processing, CSS variables, and nested syntax',
-    'Asynchronous API interactions using Axios libraries & state management systems'
+    'Proficient in building React JS, Next JS, TypeScript, and JavaScript interfaces',
+    'Integrated RESTful APIs using Redux and RTK Query for state management',
+    'Experienced in connecting web applications to CMS platforms with custom business logic',
+    'Analytics, learner tracking, and performance insights using Google Tag Manager (GTM)',
+    'Certified in Web & Mobile Hybrid App Development & Cisco Python Programming Fundamentals'
   ];
 
   return (
@@ -74,7 +74,7 @@ const Resume = () => {
 
             <a
               href="/assets/resume.pdf"
-              download="Usama_Resume.pdf"
+              download="Muhammad_Osama_Resume.pdf"
               className="btn btn-primary"
               style={{ gap: '0.6rem' }}
             >

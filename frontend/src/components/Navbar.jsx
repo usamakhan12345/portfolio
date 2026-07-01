@@ -69,7 +69,7 @@ const Navbar = () => {
       <div className="container nav-container">
         <a href="#home" className="logo" onClick={(e) => handleNavClick(e, 'home')}>
           <Terminal size={22} className="logo-icon" />
-          Usama
+          Muhammad Osama
           <span className="dot"></span>
         </a>
 

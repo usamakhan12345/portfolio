@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaDatabase, FaGitAlt, FaTerminal, FaServer } from 'react-icons/fa';
-import { SiExpress, SiMongodb, SiPostman, SiJavascript, SiSass } from 'react-icons/si';
+import { SiExpress, SiMongodb, SiPostman, SiJavascript, SiSass, SiNextdotjs, SiTypescript } from 'react-icons/si';
 
 const About = () => {
   const stats = [
-    { value: '25+', label: 'Projects Completed' },
-    { value: '15+', label: 'Happy Clients' },
-    { value: '99%', label: 'Success Rate' }
+    { value: '3+', label: 'Years Experience' },
+    { value: '15+', label: 'Projects Completed' },
+    { value: '100%', label: 'Commitment Rate' }
   ];
 
   const skillCategories = [
@@ -14,8 +14,9 @@ const About = () => {
       title: 'Frontend Development',
       skills: [
         { name: 'React.js', icon: <FaReact /> },
-        { name: 'JavaScript (ES6+)', icon: <SiJavascript /> },
-        { name: 'SCSS / Sass', icon: <SiSass /> },
+        { name: 'Next.js', icon: <SiNextdotjs /> },
+        { name: 'TypeScript', icon: <SiTypescript /> },
+        { name: 'JavaScript', icon: <SiJavascript /> },
         { name: 'HTML5 & CSS3', icon: <><FaHtml5 /><FaCss3Alt /></> }
       ]
     },
@@ -24,14 +25,14 @@ const About = () => {
       skills: [
         { name: 'Node.js', icon: <FaNodeJs /> },
         { name: 'Express.js', icon: <SiExpress /> },
-        { name: 'MongoDB / Mongoose', icon: <SiMongodb /> },
+        { name: 'MongoDB', icon: <SiMongodb /> },
         { name: 'REST APIs', icon: <FaServer /> }
       ]
     },
     {
       title: 'Tools & Workflows',
       skills: [
-        { name: 'Git & GitHub', icon: <FaGitAlt /> },
+        { name: 'GitHub & GitLab', icon: <FaGitAlt /> },
         { name: 'Postman', icon: <SiPostman /> },
         { name: 'VS Code & CLI', icon: <><FaTerminal /></> }
       ]
@@ -40,22 +41,16 @@ const About = () => {
 
   const experiences = [
     {
-      role: 'Lead Full Stack Developer',
-      company: 'Freelance & Tech Agency',
-      date: '2024 - Present',
-      description: 'Architecting end-to-end full-stack projects using React, Node.js, Express, and MongoDB. Writing modular SCSS styles, implementing JWT logins, and integrating Stripe gateways.'
+      role: 'Front-End Engineer (ReactJs & NextJs)',
+      company: 'Technyx system',
+      date: 'Dec 2023 - Present',
+      description: 'Built responsive, pixel-perfect websites using Next.js and React, ensuring optimal performance. Integrated RESTful APIs using Redux and RTK Query for efficient state management, and connected web apps to CMS platforms with custom business logic.'
     },
     {
-      role: 'MERN Developer Intern',
-      company: 'Nexus Software Labs',
-      date: '2023 - 2024',
-      description: 'Collaborated on frontend UI components, optimized database queries with Mongoose, and assisted in building robust REST API endpoints. Refactored vanilla CSS files to scalable nested SCSS.'
-    },
-    {
-      role: 'Bachelor of Computer Science',
-      company: 'Karachi University',
-      date: '2021 - 2025 (Expected)',
-      description: 'Specializing in software engineering, database management systems, and web application design principles.'
+      role: 'Bachelor Of Science in Computer Science',
+      company: 'Fuuast University',
+      date: 'Completed in 2024',
+      description: 'Specializing in computer science, software engineering principles, algorithms, and application design.'
     }
   ];
 
@@ -80,7 +75,7 @@ const About = () => {
   return (
     <section id="about" className="about-section">
       <div className="glow-backdrop purple"></div>
-      
+
       <div className="container">
         <div className="section-header">
           <h2>About <span>Me</span></h2>
@@ -97,10 +92,10 @@ const About = () => {
             className="about-bio"
           >
             <motion.p variants={itemVariants} className="bio-text">
-              I am a passionate software developer based in Pakistan, dedicated to creating premium user experiences on the web. Over the past 3+ years, I have honed my expertise in the <strong>MERN stack</strong>, transforming wireframes into production-ready web apps.
+              I am a JavaScript Developer with <strong>2+ years of experience</strong> building and maintaining responsive, high-performance web applications. I have hands-on expertise in <strong>React, Next.js, and Node.js</strong>.
             </motion.p>
             <motion.p variants={itemVariants} className="bio-text">
-              I believe in writing semantic HTML, modular and scalable SCSS files, and modular backend APIs that allow future enhancements like authentication, CMS integration, or advanced AI vector indexes to be added with minimal refactoring.
+              Proficient in <strong>HTML, CSS, JavaScript, and TypeScript</strong>, I focus on integrating robust state management using Redux/RTK Query, connecting CMS systems, and implementing data analytics like Google Tag Manager.
             </motion.p>
 
             {/* Stats list */}

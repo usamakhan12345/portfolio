@@ -123,7 +123,7 @@ const Footer = () => {
                 </div>
                 <div className="c-item">
                   <Phone size={16} />
-                  <span>03162920295</span>
+                  <span>+92-3162920295 / +92-3032584068</span>
                 </div>
                 <div className="c-item">
                   <MapPin size={16} />
@@ -174,17 +174,11 @@ const Footer = () => {
 
           {/* Social Icons row */}
           <div className="footer-social-row">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="s-link" aria-label="GitHub">
+            <a href="https://github.com/usamakhan12345" target="_blank" rel="noopener noreferrer" className="s-link" aria-label="GitHub">
               <Github size={18} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="s-link" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/muhammad-usama-khan-b64337276/" target="_blank" rel="noopener noreferrer" className="s-link" aria-label="LinkedIn">
               <Linkedin size={18} />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="s-link" aria-label="Twitter">
-              <Twitter size={18} />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="s-link" aria-label="Instagram">
-              <Instagram size={18} />
             </a>
             <a href="mailto:shehzadausamakhan@gmail.com" className="s-link" aria-label="Email">
               <Mail size={18} />
@@ -193,7 +187,7 @@ const Footer = () => {
 
           {/* Bottom Copyright details */}
           <div className="footer-bottom">
-            <p>&copy; 2026 Usama. All Rights Reserved.</p>
+            <p>&copy; 2026 Muhammad Osama. All Rights Reserved.</p>
             <p className="credit">
               Designed & Developed with <Heart size={14} className="heart-icon" />
             </p>

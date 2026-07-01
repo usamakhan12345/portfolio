@@ -16,7 +16,7 @@ const Contact = () => {
     {
       icon: <Phone />,
       label: 'Phone / WhatsApp',
-      value: '03162920295'
+      value: '+92-3162920295 / +92-3032584068'
     },
     {
       icon: <Mail />,
@@ -31,9 +31,8 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: <Github />, url: 'https://github.com', label: 'GitHub' },
-    { icon: <Linkedin />, url: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: <Twitter />, url: 'https://twitter.com', label: 'Twitter' },
+    { icon: <Github />, url: 'https://github.com/usamakhan12345', label: 'GitHub' },
+    { icon: <Linkedin />, url: 'https://www.linkedin.com/in/muhammad-usama-khan-b64337276/', label: 'LinkedIn' },
     { icon: <MessageSquare />, url: 'https://wa.me/923162920295', label: 'WhatsApp' }
   ];
 

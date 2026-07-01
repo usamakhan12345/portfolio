@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
   const [typedText, setTypedText] = useState('');
-  const targetWords = ['MERN Stack Developer', 'Full-Stack Engineer', 'UI/UX Enthusiast'];
+  const targetWords = ['React JS Developer', 'Front-End Developer', 'JavaScript Developer'];
   const [wordIndex, setWordIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -71,7 +71,7 @@ const Hero = () => {
           </div>
 
           <h1 className="hero-title">
-            Hi, I am <span className="name">Usama</span>
+            Hi, I am <span className="name">Muhammad Osama</span>
             <br />
             <span className="typewriter" style={{ minHeight: '3.6rem', display: 'block' }}>
               I'm a <span style={{ color: '#10b981' }}>{typedText}</span>
@@ -80,7 +80,7 @@ const Hero = () => {
           </h1>
 
           <p className="hero-subtitle">
-            I design and build premium web applications using the MongoDB, Express.js, React, and Node.js stack. I specialize in crafting interactive digital experiences that combine clean backend systems with gorgeous, custom styled frontends.
+            I design and build premium, high-performance web applications using HTML, CSS, JavaScript, React, Next.js, and Node.js. I specialize in crafting interactive digital experiences with custom styling and seamless API integrations.
           </p>
 
           <div className="hero-actions">
@@ -92,7 +92,7 @@ const Hero = () => {
             </button>
             <a 
               href="/assets/resume.pdf" 
-              download="Usama_Resume.pdf" 
+              download="Muhammad_Osama_Resume.pdf" 
               className="btn btn-secondary"
               style={{ gap: '0.5rem' }}
             >
@@ -111,7 +111,7 @@ const Hero = () => {
           <div className="visual-wrapper">
             <div className="main-avatar">
               {/* Uses generated avatar in public/assets */}
-              <img src="/assets/avatar.png" alt="Usama's Avatar" />
+              <img src="/assets/avatar.png" alt="Muhammad Osama's Avatar" />
             </div>
 
             {/* Floating dynamic badges */}
@@ -121,7 +121,7 @@ const Hero = () => {
               </div>
               <div className="badge-text">
                 <span className="label">Experience</span>
-                <span className="val">3+ Years</span>
+                <span className="val">2+ Years</span>
               </div>
             </div>
 

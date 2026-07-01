@@ -11,12 +11,28 @@ import 'swiper/css/pagination';
 const Projects = () => {
   const dummyProjects = [
     {
+      title: 'Dubai Department of Economy and Tourism – Learning Hub',
+      description: 'Architected Redux-based API integrations to establish reliable, optimized data flow. Developed custom logic for Course Detail pages to handle dynamic content, and integrated Google Tag Manager (GTM) for analytics.',
+      tech: ['React.js', 'Next.js', 'Redux', 'GTM', 'CMS Integration'],
+      image: '/assets/project_chat.png',
+      demoUrl: 'https://dubailearnsme.ae',
+      githubUrl: 'https://github.com/usamakhan12345'
+    },
+    {
+      title: 'ZNM (Zayed National Museum)',
+      description: 'Contributed to UI development and API integrations for the Zayed National Museum website, delivering a culturally significant experience. Built dynamic Donation, Volunteer, and Partnership forms with backend connectivity.',
+      tech: ['React.js', 'SCSS', 'REST APIs', 'Node.js', 'Express.js'],
+      image: '/assets/project_ecommerce.png',
+      demoUrl: 'https://zayednationalmuseum.ae',
+      githubUrl: 'https://github.com/usamakhan12345'
+    },
+    {
       title: 'AI Conversational Dashboard',
       description: 'A full-stack client support platform utilizing a modular AI RAG query pipeline. It retrieves relevant text embeddings from vector storage and compiles prompt answers with historical persistence.',
       tech: ['React.js', 'SCSS', 'Node.js', 'Express.js', 'MongoDB'],
       image: '/assets/project_chat.png',
       demoUrl: 'https://example.com',
-      githubUrl: 'https://github.com'
+      githubUrl: 'https://github.com/usamakhan12345'
     },
     {
       title: 'Futuristic E-Commerce Platform',
@@ -24,7 +40,7 @@ const Projects = () => {
       tech: ['React.js', 'SCSS', 'Redux', 'Node.js', 'MongoDB'],
       image: '/assets/project_ecommerce.png',
       demoUrl: 'https://example.com',
-      githubUrl: 'https://github.com'
+      githubUrl: 'https://github.com/usamakhan12345'
     },
     {
       title: 'Real-Time Analytics Suite',
@@ -32,31 +48,7 @@ const Projects = () => {
       tech: ['React.js', 'SCSS', 'Node.js', 'Express.js', 'Recharts'],
       image: '/assets/project_analytics.png',
       demoUrl: 'https://example.com',
-      githubUrl: 'https://github.com'
-    },
-    {
-      title: 'SaaS Cloud Storage Hub',
-      description: 'A responsive storage service dashboard with folder structures, file uploading simulations, usage progress rings, and file type classification filters.',
-      tech: ['React.js', 'SCSS', 'Context API', 'Node.js', 'Express.js'],
-      image: '/assets/project_ecommerce.png',
-      demoUrl: 'https://example.com',
-      githubUrl: 'https://github.com'
-    },
-    {
-      title: 'Decentralized Web3 Portal',
-      description: 'A premium landing page displaying crypto market metrics, live transaction logs, Web3 wallet connecting cards, and custom canvas-based network diagrams.',
-      tech: ['React.js', 'SCSS', 'Chart.js', 'Ethers.js'],
-      image: '/assets/project_analytics.png',
-      demoUrl: 'https://example.com',
-      githubUrl: 'https://github.com'
-    },
-    {
-      title: 'Real-Time Shared Whiteboard',
-      description: 'A collaborative canvas allowing multiple team sessions. Includes draw selectors, custom colors, undo-redo operations, and mock syncing notifications.',
-      tech: ['React.js', 'SCSS', 'HTML5 Canvas', 'Node.js', 'Socket.io'],
-      image: '/assets/project_chat.png',
-      demoUrl: 'https://example.com',
-      githubUrl: 'https://github.com'
+      githubUrl: 'https://github.com/usamakhan12345'
     }
   ];
 
