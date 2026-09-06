@@ -28,7 +28,7 @@ function App() {
 
       {/* Floating Action Buttons */}
       <WhatsAppButton />
-      <Chatbot />
+      {/* <Chatbot /> */}
 
       {/* Global CSS style transitions */}
       <style>{`

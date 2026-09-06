@@ -70,14 +70,14 @@ If the context does not contain the answer, reply to the best of your general ab
     ) {
       const hasFuuast = cleanContext.toLowerCase().includes('fuuast');
       const hasBachelor = cleanContext.toLowerCase().includes('bachelor');
-      const hasCert = cleanContext.toLowerCase().includes('technyx') || cleanContext.toLowerCase().includes('hybrid');
+      const hasCert = cleanContext.toLowerCase().includes('technyx') || cleanContext.toLowerCase().includes('hybrid') || cleanContext.toLowerCase().includes('cisco') || cleanContext.toLowerCase().includes('python');
 
       let reply = "";
       if (hasFuuast && hasBachelor) {
         reply += "- 🎓 **Education**: He holds a **Bachelor of Science in Computer Science** from **Fuuast University** (Completed in 2024).\n";
       }
       if (hasCert) {
-        reply += "- 📜 **Certification**: He has completed a professional training course in **Web & Mobile Hybrid App Development** at Technyx System.\n";
+        reply += "- 📜 **Certification**: He has completed professional courses including **Web & Mobile Hybrid App Development** and **Python Programming Fundamentals** (Cisco).\n";
       }
       
       if (!hasFuuast && !hasCert) {
@@ -139,7 +139,7 @@ If the context does not contain the answer, reply to the best of your general ab
       query.includes('know')
     ) {
       const skills = [];
-      const matchTerms = ['react', 'next.js', 'typescript', 'javascript', 'node', 'express', 'mongodb', 'redux', 'git', 'gitlab', 'github', 'html5', 'css3'];
+      const matchTerms = ['react', 'next.js', 'typescript', 'javascript', 'node', 'express', 'mongodb', 'mysql', 'postgresql', 'sql', 'redux', 'git', 'gitlab', 'github', 'html5', 'css3'];
       
       matchTerms.forEach(term => {
         if (cleanContext.toLowerCase().includes(term)) {
@@ -169,11 +169,11 @@ He is proficient in building robust front-end interfaces, integrating RESTful AP
     ) {
       return `Here are the key links to Usama's projects and code repositories:
 
-- 🌐 **Dubai Department of Economy and Tourism – Learning Hub**: [Live Website](https://dubailearns.me)
-- 🤖 **AI Conversational Dashboard**: [GitHub Code](https://github.com) | [Live Demo](https://example.com)
-- 🛒 **Futuristic E-Commerce Platform**: [GitHub Code](https://github.com) | [Live Demo](https://example.com)
-- 📊 **Real-Time Analytics Suite**: [GitHub Code](https://github.com) | [Live Demo](https://example.com)
-- ☁️ **SaaS Cloud Storage Hub**: [GitHub Code](https://github.com) | [Live Demo](https://example.com)
+- 🌐 **Dubai Department of Economy and Tourism – Learning Hub**: [Live Website](https://dubailearnsme.ae)
+- 🏛️ **ZNM (Zayed National Museum)**: [Live Website](https://zayednationalmuseum.ae)
+- 🤖 **AI Conversational Dashboard**: [GitHub Code](https://github.com/usamakhan12345) | [Live Demo](https://example.com)
+- 🛒 **Futuristic E-Commerce Platform**: [GitHub Code](https://github.com/usamakhan12345) | [Live Demo](https://example.com)
+- 📊 **Real-Time Analytics Suite**: [GitHub Code](https://github.com/usamakhan12345) | [Live Demo](https://example.com)
 
 *(Note: Some links are placeholder templates that you can customize with your actual project domains).*`;
     }
@@ -235,7 +235,7 @@ ${finalSentences.map(s => `- ${s}.`).join('\n')}`;
 
   // 4. Default Conversational replies (if no context matching)
   if (query.includes('skill') || query.includes('tech') || query.includes('expert') || query.includes('know')) {
-    return "Usama is a **MERN Stack Software Engineer** specializing in:\n- **Frontend**: React, JavaScript (ES6+), custom SCSS styling (Variables, Mixins), Framer Motion, Swiper\n- **Backend**: Node.js, Express, REST APIs, Multer, Text-parsing pipelines\n- **Databases**: MongoDB & Mongoose schemas";
+    return "Usama is a **Full-Stack Developer (MERN)** and **JavaScript Developer** specializing in:\n- **Frontend**: React JS, Next JS, TypeScript, JavaScript (ES6+), Redux, RTK Query, HTML5 & CSS3 (SCSS, Flexbox, CSS Grid), Google Tag Manager\n- **Backend**: Node JS, Express JS, REST APIs\n- **Databases**: MongoDB (NoSQL), MySQL & PostgreSQL (SQL)\n- **Tools**: GitHub & GitLab";
   }
 
   if (query.includes('contact') || query.includes('phone') || query.includes('email') || query.includes('whatsapp') || query.includes('reach')) {

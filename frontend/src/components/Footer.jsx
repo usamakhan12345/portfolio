@@ -65,7 +65,7 @@ const Footer = () => {
           <div className="footer-cta-banner">
             <div className="cta-left">
               <h2>Let's build something amazing together</h2>
-              <p>Seek professional MERN development, custom interfaces, or full-stack software advice.</p>
+              <p>Seek professional frontend development, custom React interfaces, or web application advice.</p>
             </div>
             <div className="cta-right">
               <a href="#contact" className="btn btn-primary" onClick={(e) => scrollToSection(e, 'contact')}>
@@ -83,9 +83,9 @@ const Footer = () => {
                 Usama
                 <span className="dot"></span>
               </a>
-              <p className="brand-tagline">MERN Stack Software Engineer</p>
+              <p className="brand-tagline">React / MERN Stack / JS Developer</p>
               <p className="brand-intro">
-                Crafting modern web applications with clean, production-ready backend servers and high-fidelity custom styled interfaces.
+                Crafting modern full-stack web applications with responsive layouts, premium animations, and high-fidelity custom styled interfaces.
               </p>
             </div>
 
@@ -106,7 +106,7 @@ const Footer = () => {
               <h3>Services</h3>
               <ul>
                 <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')}>Frontend Development</a></li>
-                <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')}>MERN Stack Apps</a></li>
+                <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')}>React / Next JS Apps</a></li>
                 <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')}>UI/UX Custom Layouts</a></li>
                 <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')}>REST API Connections</a></li>
                 <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')}>Speed Optimization</a></li>

@@ -101,7 +101,7 @@ const Chatbot = () => {
         if (q.includes('hi') || q.includes('hello') || q.includes('hey')) {
           fallbackText = "Hello! How can I help you? (Offline Mode)";
         } else if (q.includes('skill') || q.includes('tech') || q.includes('expert')) {
-          fallbackText = "Usama is a MERN Stack Developer proficient in React, NodeJS, Express, MongoDB, and SCSS stylesheets.";
+          fallbackText = "Usama is a Full-Stack MERN and JavaScript Developer proficient in React, Next.js, Node.js, Express, MongoDB, SQL databases (MySQL/PostgreSQL), TypeScript, and SCSS styling.";
         } else if (q.includes('contact') || q.includes('whatsapp') || q.includes('phone')) {
           fallbackText = "You can reach Usama at 03162920295 or on WhatsApp using the floating green button in the corner!";
         }

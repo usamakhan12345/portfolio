@@ -23,6 +23,11 @@
       color: $text-secondary;
       font-size: 1.05rem;
       line-height: 1.7;
+
+      strong {
+        color: $color-secondary;
+        font-weight: 600;
+      }
     }
   }
 

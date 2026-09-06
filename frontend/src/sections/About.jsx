@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaDatabase, FaGitAlt, FaTerminal, FaServer } from 'react-icons/fa';
-import { SiExpress, SiMongodb, SiPostman, SiJavascript, SiSass, SiNextdotjs, SiTypescript } from 'react-icons/si';
+import { SiExpress, SiMongodb, SiPostman, SiJavascript, SiSass, SiNextdotjs, SiTypescript, SiMysql, SiPostgresql } from 'react-icons/si';
 
 const About = () => {
   const stats = [
-    { value: '3+', label: 'Years Experience' },
+    { value: '2+', label: 'Years Experience' },
     { value: '15+', label: 'Projects Completed' },
     { value: '100%', label: 'Commitment Rate' }
   ];
@@ -25,7 +25,8 @@ const About = () => {
       skills: [
         { name: 'Node.js', icon: <FaNodeJs /> },
         { name: 'Express.js', icon: <SiExpress /> },
-        { name: 'MongoDB', icon: <SiMongodb /> },
+        { name: 'MongoDB (NoSQL)', icon: <SiMongodb /> },
+        { name: 'MySQL & PostgreSQL (SQL)', icon: <><SiMysql /><SiPostgresql /></> },
         { name: 'REST APIs', icon: <FaServer /> }
       ]
     },
@@ -44,13 +45,25 @@ const About = () => {
       role: 'Front-End Engineer (ReactJs & NextJs)',
       company: 'Technyx system',
       date: 'Dec 2023 - Present',
-      description: 'Built responsive, pixel-perfect websites using Next.js and React, ensuring optimal performance. Integrated RESTful APIs using Redux and RTK Query for efficient state management, and connected web apps to CMS platforms with custom business logic.'
+      description: 'Built responsive, pixel-perfect websites using Next.js and React, ensuring optimal performance across various devices and screen sizes. Integrated RESTful APIs using Redux and RTK Query, enabling efficient state management and smooth frontend-backend communication. Connected web applications to CMS platforms with custom business logic to dynamically manage and render content at scale.'
     },
     {
       role: 'Bachelor Of Science in Computer Science',
       company: 'Fuuast University',
       date: 'Completed in 2024',
-      description: 'Specializing in computer science, software engineering principles, algorithms, and application design.'
+      description: 'Specialized in computer science, software engineering principles, algorithms, and application design.'
+    },
+    {
+      role: 'Web & Mobile Hybrid App Development',
+      company: 'Certification',
+      date: 'Completed',
+      description: 'Completed professional training course focusing on full-stack web and mobile hybrid application development.'
+    },
+    {
+      role: 'Python Programming Fundamentals',
+      company: 'Cisco',
+      date: 'Completed',
+      description: 'Acquired foundational knowledge of computer science, programming logic, data structures, and algorithms in Python.'
     }
   ];
 
@@ -92,10 +105,10 @@ const About = () => {
             className="about-bio"
           >
             <motion.p variants={itemVariants} className="bio-text">
-              I am a JavaScript Developer with <strong>2+ years of experience</strong> building and maintaining responsive, high-performance web applications. I have hands-on expertise in <strong>React, Next.js, and Node.js</strong>.
+              I am a results-driven <strong>Full-Stack MERN & JavaScript Developer</strong> with <strong>2+ years of professional experience</strong> architecting high-performance web applications. I specialize in engineering seamless end-to-end solutions, combining rich interactive frontends built with <strong>React and Next.js</strong> with scalable server-side systems powered by <strong>Node.js, Express, MongoDB</strong>, and relational SQL databases (<strong>MySQL / PostgreSQL</strong>).
             </motion.p>
             <motion.p variants={itemVariants} className="bio-text">
-              Proficient in <strong>HTML, CSS, JavaScript, and TypeScript</strong>, I focus on integrating robust state management using Redux/RTK Query, connecting CMS systems, and implementing data analytics like Google Tag Manager.
+              Proficient in <strong>HTML5, CSS3, JavaScript (ES6+), and TypeScript</strong>, I focus on writing clean, modular code, integrating optimized state management via <strong>Redux & RTK Query</strong>, and connecting headless CMS platforms. I also leverage analytics systems like <strong>Google Tag Manager</strong> to drive data-informed performance improvements.
             </motion.p>
 
             {/* Stats list */}

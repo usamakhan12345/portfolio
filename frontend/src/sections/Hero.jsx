@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import { Download, ArrowRight, Github, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+const targetWords = ['React JS Developer', 'Next JS Developer', 'JavaScript Developer', 'MERN Stack Developer'];
+
 const Hero = () => {
   const [typedText, setTypedText] = useState('');
-  const targetWords = ['React JS Developer', 'Front-End Developer', 'JavaScript Developer'];
   const [wordIndex, setWordIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -13,24 +14,28 @@ const Hero = () => {
   useEffect(() => {
     let timer;
     const currentWord = targetWords[wordIndex];
-    
-    if (isDeleting) {
-      timer = setTimeout(() => {
-        setTypedText(currentWord.substring(0, charIndex - 1));
-        setCharIndex(prev => prev - 1);
-      }, 50);
-    } else {
-      timer = setTimeout(() => {
-        setTypedText(currentWord.substring(0, charIndex + 1));
-        setCharIndex(prev => prev + 1);
-      }, 100);
-    }
 
-    if (!isDeleting && charIndex === currentWord.length) {
-      timer = setTimeout(() => setIsDeleting(true), 1500); // Wait before delete
-    } else if (isDeleting && charIndex === 0) {
-      setIsDeleting(false);
-      setWordIndex(prev => (prev + 1) % targetWords.length);
+    if (isDeleting) {
+      if (charIndex > 0) {
+        timer = setTimeout(() => {
+          setTypedText(currentWord.substring(0, charIndex - 1));
+          setCharIndex(prev => prev - 1);
+        }, 50);
+      } else {
+        setIsDeleting(false);
+        setWordIndex((prev) => (prev + 1) % targetWords.length);
+      }
+    } else {
+      if (charIndex < currentWord.length) {
+        timer = setTimeout(() => {
+          setTypedText(currentWord.substring(0, charIndex + 1));
+          setCharIndex(prev => prev + 1);
+        }, 100);
+      } else {
+        timer = setTimeout(() => {
+          setIsDeleting(true);
+        }, 1500);
+      }
     }
 
     return () => clearTimeout(timer);
@@ -80,7 +85,7 @@ const Hero = () => {
           </h1>
 
           <p className="hero-subtitle">
-            I design and build premium, high-performance web applications using HTML, CSS, JavaScript, React, Next.js, and Node.js. I specialize in crafting interactive digital experiences with custom styling and seamless API integrations.
+            I design and build premium, high-performance web applications using HTML, CSS, JavaScript, React, Next.js, Node.js, Express, MongoDB, and SQL databases. I specialize in crafting interactive full-stack digital experiences with custom styling and seamless API integrations.
           </p>
 
           <div className="hero-actions">
@@ -115,7 +120,11 @@ const Hero = () => {
             </div>
 
             {/* Floating dynamic badges */}
-            <div className="floating-badge badge-1">
+            <motion.div 
+              animate={{ y: [0, -12, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+              className="floating-badge badge-1"
+            >
               <div className="info-icon badge-icon">
                 <Award size={20} />
               </div>
@@ -123,9 +132,13 @@ const Hero = () => {
                 <span className="label">Experience</span>
                 <span className="val">2+ Years</span>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="floating-badge badge-2">
+            <motion.div 
+              animate={{ y: [0, 12, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 0.5 }}
+              className="floating-badge badge-2"
+            >
               <div className="info-icon badge-icon" style={{ color: '#8b5cf6' }}>
                 <Github size={20} />
               </div>
@@ -133,7 +146,7 @@ const Hero = () => {
                 <span className="label">Open Source</span>
                 <span className="val">500+ Commits</span>
               </div>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>

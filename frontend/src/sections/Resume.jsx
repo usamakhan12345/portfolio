@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 
 const Resume = () => {
   const resumeHighlights = [
-    'Proficient in building React JS, Next JS, TypeScript, and JavaScript interfaces',
+    'Full-Stack MERN developer proficient in React, Next.js, Node.js, Express, and MongoDB',
+    'Experienced in SQL database administration (MySQL & PostgreSQL) and relational schemas',
     'Integrated RESTful APIs using Redux and RTK Query for state management',
     'Experienced in connecting web applications to CMS platforms with custom business logic',
     'Analytics, learner tracking, and performance insights using Google Tag Manager (GTM)',

@@ -8,13 +8,18 @@
   // Swiper Slider Styling
   .swiper-container-wrapper {
     position: relative;
-    padding: 2rem 0 4rem;
+    padding: 1rem 0 3.5rem;
     width: 100%;
-    max-width: 100vw;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @include mobile {
+      padding: 0.5rem 0 3rem;
+    }
   }
 
   .swiper {
-    padding: 2rem 0 4rem !important; // Extra padding for 3D scale elevation and shadows
+    padding: 1.5rem 1rem 3.5rem !important; // Extra padding for scale elevation and shadows
     width: 100%;
   }
 
@@ -22,15 +27,21 @@
     height: auto;
     display: flex;
     justify-content: center;
-    transition: opacity 0.6s ease;
-    opacity: 0.35; // Faded surrounding slides
-    width: 400px;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0.45; // Faded surrounding slides
+    width: 380px;
+
+    @include laptop {
+      width: 340px;
+    }
 
     @include tablet {
-      width: 320px;
+      width: 310px;
     }
+
     @include mobile {
-      width: 270px;
+      width: 85vw; // Responsive full view on small mobile devices
+      max-width: 320px;
     }
 
     // Center active slide styles
@@ -39,29 +50,27 @@
       z-index: 10;
 
       .project-card {
-        transform: scale(1.05); // Larger active slide
+        transform: scale(1.03); // Subtle scale elevation
         box-shadow: 
-          0 20px 40px rgba(0, 0, 0, 0.4),
-          0 0 30px rgba($color-primary, 0.2),
-          0 0 15px rgba($color-secondary, 0.1);
-        border-color: rgba($color-primary, 0.3);
+          0 20px 40px rgba(0, 0, 0, 0.5),
+          0 0 25px rgba($color-primary, 0.25),
+          0 0 12px rgba($color-secondary, 0.15);
+        border-color: rgba($color-primary, 0.35);
 
         &::after {
           opacity: 1; // Show gradient glowing borders
-        }
-
-        .project-actions {
-          opacity: 1;
-          max-height: 80px;
-          margin-top: 1.5rem; // Expand action buttons
         }
       }
     }
 
     // Partially visible adjacent cards
     &-prev, &-next {
-      opacity: 0.65;
+      opacity: 0.7;
       z-index: 5;
+
+      .project-actions {
+        pointer-events: none !important;
+      }
     }
   }
 
@@ -71,10 +80,10 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 100%;
     overflow: hidden;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease, box-shadow 0.4s ease;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transform: scale(0.9); // Smaller surrounding cards
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 
     // Glowing border styling
     position: relative;
@@ -89,33 +98,20 @@
       -webkit-mask-composite: xor;
       mask-composite: exclude;
       opacity: 0;
-      transition: opacity 0.6s ease;
+      transition: opacity 0.5s ease;
       pointer-events: none;
-    }
-
-    // Active Card Hover Elevations
-    &.active:hover {
-      transform: scale(1.08) translateY(-5px);
-      box-shadow: 
-        0 25px 50px rgba(0, 0, 0, 0.5),
-        0 0 35px rgba($color-primary, 0.3),
-        0 0 20px rgba($color-secondary, 0.2);
-      border-color: rgba($color-primary, 0.5);
-
-      .project-image img {
-        transform: scale(1.08);
-      }
     }
 
     .project-image {
       position: relative;
       width: 100%;
-      height: 220px;
+      height: 200px;
       overflow: hidden;
       border-bottom: 1px solid $border-color;
+      flex-shrink: 0;
 
       @include mobile {
-        height: 180px;
+        height: 160px;
       }
 
       img {
@@ -127,75 +123,78 @@
     }
 
     .project-content {
-      padding: 1.75rem;
+      padding: 1.5rem;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
+      justify-content: space-between;
 
       @include mobile {
-        padding: 1.25rem;
+        padding: 1.15rem;
       }
     }
 
     .project-title {
-      font-size: 1.4rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: $text-primary;
       margin-bottom: 0.5rem;
+      line-height: 1.35;
 
       @include mobile {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
       }
     }
 
     .project-desc {
       color: $text-secondary;
-      font-size: 0.95rem;
-      line-height: 1.6;
+      font-size: 0.9rem;
+      line-height: 1.55;
       margin-bottom: 1.25rem;
       flex-grow: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 4; // Prevent long descriptions from breaking layout
+      -webkit-box-orient: vertical;
+      overflow: hidden;
 
       @include mobile {
         font-size: 0.85rem;
-        line-height: 1.5;
+        -webkit-line-clamp: 3;
       }
     }
 
     .project-tech {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
     }
 
     .tech-tag {
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.06);
       color: $text-secondary;
-      padding: 0.25rem 0.6rem;
+      padding: 0.2rem 0.55rem;
       border-radius: 6px;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 500;
     }
 
-    // Project action buttons transition reveal setup
+    // Project action buttons
     .project-actions {
       display: flex;
-      gap: 1rem;
-      opacity: 0;
-      max-height: 0;
-      overflow: hidden;
-      transition: opacity 0.5s ease, max-height 0.5s ease, margin-top 0.5s ease;
+      gap: 0.75rem;
 
       .action-btn {
         flex: 1;
-        padding: 0.6rem 1rem;
+        padding: 0.55rem 0.85rem;
         border-radius: 8px;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         font-weight: 600;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 0.5rem;
+        gap: 0.4rem;
         text-align: center;
         transition: $transition-fast;
 
@@ -228,9 +227,9 @@
   // Custom Swiper Navigation Arrow Buttons Overrides
   .swiper-button-prev,
   .swiper-button-next {
-    width: 46px;
-    height: 46px;
-    background: rgba($bg-secondary, 0.6);
+    width: 42px;
+    height: 42px;
+    background: rgba($bg-secondary, 0.8);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid $border-color;
@@ -239,9 +238,11 @@
     transition: $transition-normal;
     box-shadow: $shadow-md;
     z-index: 100;
+    top: 50%;
+    transform: translateY(-50%);
 
     &::after {
-      font-size: 1.15rem !important;
+      font-size: 1rem !important;
       font-weight: 700;
     }
 
@@ -249,20 +250,19 @@
       background: $color-primary;
       border-color: $color-primary;
       box-shadow: 0 0 15px rgba($color-primary, 0.5);
-      transform: scale(1.05);
     }
 
     @include tablet {
-      display: none !important; // Hide arrow controls on touch screens
+      display: none !important; // Hide arrow controls on touch screens to prevent text overlap
     }
   }
 
   .swiper-button-prev {
-    left: 20px !important;
+    left: 5px !important;
   }
 
   .swiper-button-next {
-    right: 20px !important;
+    right: 5px !important;
   }
 
   .swiper-pagination-bullets {
